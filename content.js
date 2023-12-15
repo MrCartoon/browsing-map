@@ -2,6 +2,7 @@ function sendLinks() {
   let baseUrl = window.location.href;
   let links = Array.from(document.querySelectorAll("a"))
     .map((a) => {
+      if (!a.getAttribute("href")) { return ''; }
       let url = new URL(a.getAttribute("href"), baseUrl);
       return url.protocol + "//" + url.hostname + url.pathname;
     })

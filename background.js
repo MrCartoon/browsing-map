@@ -60,3 +60,7 @@ chrome.runtime.onMessage.addListener(async function (message, sender) {
   // Store the updated links back in local storage
   await chrome.storage.local.set({ links: links });
 });
+
+chrome.action.onClicked.addListener(function (tab) {
+  chrome.tabs.create({ url: "graph.html" });
+});
