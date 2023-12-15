@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Redirect Tracker",
+  "version": "1.0",
+  "permissions": ["webNavigation", "storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
